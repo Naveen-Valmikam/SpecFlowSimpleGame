@@ -14,36 +14,18 @@ namespace Specs
         {
             _player = new PlayerCharacter();
         }
-        
-        [When(@"I take 0 damage")]
-        public void WhenITake0Damage()
+
+        [When("I take (.*) damage")]
+        public void WhenITakeDamage(int damage)
         {
-            _player.Hit(0);
-        }
-        
-        [Then(@"My health should now be 100")]
-        public void ThenMyHealthShouldNowBe100()
-        {
-            Assert.Equal(100, _player.Health);
+            _player.Hit(damage);
         }
 
 
-        [When(@"I take 30 damage")]
-        public void WhenITake30Damage()
+        [Then("My health should now be (.*)")]
+        public void ThenMyHealthShouldNowBe(int expectedHealth)
         {
-            _player.Hit(30);
-        }
-
-        [Then(@"My health should now be 70")]
-        public void ThenMyHealthShouldNowBe70()
-        {
-            Assert.Equal(70, _player.Health);
-        }
-
-        [When(@"I take 100 damage")]
-        public void WhenITake100Damage()
-        {
-            _player.Hit(100);
+            Assert.Equal(expectedHealth, _player.Health);
         }
 
         [Then(@"I am dead")]
