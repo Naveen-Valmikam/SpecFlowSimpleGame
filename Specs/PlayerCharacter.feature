@@ -4,17 +4,35 @@
 	I want my character attributes to be correctly represented
 
 
-Scenario: Taking no damage when hit doesn't affect health
-	Given I'm a new player
-	When I take 0 damage
-	Then My health should now be 100
+	Background: 
+		Given I'm a new player
 
-Scenario: Starting health is reduced when player takes a hit
-Given I'm a new player
-When I take 30 damage
-Then My health should now be 70
+	Scenario Outline: Health Reduction	
+	When I take <damage> damage
+	Then My health should now be <expectedHealth>
+
+	Examples: 
+	| damage | expectedHealth |
+	| 0      | 100            |
+	| 30     | 70             |
+	| 60     | 40             |
+
+	
 
 Scenario: Taking too much damageresults in player death
-Given I'm a new player
 When I take 100 damage
 Then I am dead
+
+Scenario: Elf race characters get additional 20 damage resistance
+And I have a damage resistance of 10
+And I'm an Elf
+When I take 30 damage
+Then My health should now be 100
+
+Scenario: Elf race characters get additional 20 damage resistance using data table
+And I have the following attributes
+| attribute  | value |
+| Race       | Elf   |
+| Resistance | 10    |
+When I take 30 damage
+Then My health should now be 100
