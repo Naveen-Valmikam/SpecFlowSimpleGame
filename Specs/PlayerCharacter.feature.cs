@@ -171,6 +171,28 @@ testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.Spec
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Healers restore all health")]
+        [Xunit.TraitAttribute("FeatureTitle", "PlayerCharacter")]
+        [Xunit.TraitAttribute("Description", "Healers restore all health")]
+        public virtual void HealersRestoreAllHealth()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Healers restore all health", ((string[])(null)));
+#line 40
+this.ScenarioSetup(scenarioInfo);
+#line 7
+ this.FeatureBackground();
+#line 41
+testRunner.Given("My character class is set to healer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 42
+testRunner.When("I take 30 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
+testRunner.And("Cast a healing spell", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

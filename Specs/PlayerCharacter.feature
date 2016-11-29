@@ -36,3 +36,9 @@ And I have the following attributes
 | Resistance | 10    |
 When I take 30 damage
 Then My health should now be 100
+
+Scenario: Healers restore all health
+Given My character class is set to healer
+When I take 30 damage
+And Cast a healing spell
+Then My health should now be 100
