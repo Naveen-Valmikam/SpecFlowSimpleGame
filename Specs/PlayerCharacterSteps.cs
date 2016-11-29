@@ -51,8 +51,7 @@ namespace Specs
         [Given(@"I have the following attributes")]
         public void GivenIHaveTheFollowingAttributes(Table table)
         {
-            var attributes = table.CreateInstance<PlayerAttributes>();
-
+            dynamic attributes = table.CreateDynamicInstance();
             _player.Race = attributes.Race;
             _player.DamageResistance = attributes.Resistance;
 
@@ -70,5 +69,32 @@ namespace Specs
         {
             _player.CastHealingSpell();
         }
+
+
+        [Given(@"I have the following magical items")]
+        public void GivenIHaveTheFollowingMagicalItems(Table table)
+        {
+            foreach (var row in table.Rows)
+            {
+                var name = row["Item"];
+                var value = row["Value"];
+                var power = row["Power"];
+
+                _player.MagicalItems.Add(new MagicalItem
+                {
+                    Name = name,
+                    Value = int.Parse(value),
+                    Power = int.Parse(power)
+                });
+
+            }
+        }
+
+        [Then(@"My total magical power should be (.*)")]
+        public void ThenMyTotalMagicalPowerShouldBe(int expectedPower)
+        {
+            Assert.Equal(expectedPower, _player.MagicalPower);
+        }
+
     }
 }

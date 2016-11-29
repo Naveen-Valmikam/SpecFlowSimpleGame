@@ -193,6 +193,41 @@ testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.Spec
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Total magical power")]
+        [Xunit.TraitAttribute("FeatureTitle", "PlayerCharacter")]
+        [Xunit.TraitAttribute("Description", "Total magical power")]
+        public virtual void TotalMagicalPower()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Total magical power", ((string[])(null)));
+#line 47
+this.ScenarioSetup(scenarioInfo);
+#line 7
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item",
+                        "Value",
+                        "Power"});
+            table2.AddRow(new string[] {
+                        "Ring",
+                        "200",
+                        "100"});
+            table2.AddRow(new string[] {
+                        "Amulet",
+                        "400",
+                        "200"});
+            table2.AddRow(new string[] {
+                        "Ring",
+                        "100",
+                        "400"});
+#line 48
+testRunner.Given("I have the following magical items", ((string)(null)), table2, "Given ");
+#line 53
+testRunner.Then("My total magical power should be 700", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

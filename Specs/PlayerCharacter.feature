@@ -42,3 +42,12 @@ Given My character class is set to healer
 When I take 30 damage
 And Cast a healing spell
 Then My health should now be 100
+
+
+Scenario: Total magical power
+Given I have the following magical items
+| Item   | Value | Power |
+| Ring   | 200   | 100   |
+| Amulet | 400   | 200   |
+| Ring   | 100   | 400   |
+Then My total magical power should be 700
