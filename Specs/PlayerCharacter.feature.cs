@@ -205,7 +205,7 @@ this.ScenarioSetup(scenarioInfo);
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Item",
+                        "name",
                         "Value",
                         "Power"});
             table2.AddRow(new string[] {

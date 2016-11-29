@@ -46,7 +46,7 @@ Then My health should now be 100
 
 Scenario: Total magical power
 Given I have the following magical items
-| Item   | Value | Power |
+| name   | Value | Power |
 | Ring   | 200   | 100   |
 | Amulet | 400   | 200   |
 | Ring   | 100   | 400   |

@@ -3,6 +3,8 @@ using System.Linq;
 using TechTalk.SpecFlow;
 using Xunit;
 using TechTalk.SpecFlow.Assist;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Specs
 {
@@ -74,20 +76,37 @@ namespace Specs
         [Given(@"I have the following magical items")]
         public void GivenIHaveTheFollowingMagicalItems(Table table)
         {
-            foreach (var row in table.Rows)
-            {
-                var name = row["Item"];
-                var value = row["Value"];
-                var power = row["Power"];
+            //foreach (var row in table.Rows)
+            //{
+            //    var name = row["Item"];
+            //    var value = row["Value"];
+            //    var power = row["Power"];
 
-                _player.MagicalItems.Add(new MagicalItem
-                {
-                    Name = name,
-                    Value = int.Parse(value),
-                    Power = int.Parse(power)
-                });
+            //    _player.MagicalItems.Add(new MagicalItem
+            //    {
+            //        Name = name,
+            //        Value = int.Parse(value),
+            //        Power = int.Parse(power)
+            //    });
 
-            }
+            //}
+
+            // Strongly Typed DataSet
+            IEnumerable<MagicalItem> items = table.CreateSet<MagicalItem>();
+            _player.MagicalItems.AddRange(items);
+
+
+            // using Dynamic Set -- weakly typed though
+            //IEnumerable<dynamic> items = table.CreateDynamicSet();
+            //foreach (var magicalItem in items)
+            //{
+            //    _player.MagicalItems.Add(new MagicalItem
+            //    {
+            //        Name = magicalItem.name,
+            //        Value = magicalItem.Value,
+            //        Power = magicalItem.Power
+            //    });
+            //}
         }
 
         [Then(@"My total magical power should be (.*)")]
