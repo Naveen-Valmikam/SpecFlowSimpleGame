@@ -122,20 +122,22 @@ testRunner.Then("I am dead", ((string)(null)), ((TechTalk.SpecFlow.Table)(null))
         [Xunit.FactAttribute(DisplayName="Elf race characters get additional 20 damage resistance")]
         [Xunit.TraitAttribute("FeatureTitle", "PlayerCharacter")]
         [Xunit.TraitAttribute("Description", "Elf race characters get additional 20 damage resistance")]
+        [Xunit.TraitAttribute("Category", "elf")]
         public virtual void ElfRaceCharactersGetAdditional20DamageResistance()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elf race characters get additional 20 damage resistance", ((string[])(null)));
-#line 24
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elf race characters get additional 20 damage resistance", new string[] {
+                        "elf"});
+#line 25
 this.ScenarioSetup(scenarioInfo);
 #line 7
  this.FeatureBackground();
-#line 25
-testRunner.And("I have a damage resistance of 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
-testRunner.And("I\'m an Elf", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I have a damage resistance of 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
-testRunner.When("I take 30 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I\'m an Elf", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
+testRunner.When("I take 30 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
 testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -144,10 +146,12 @@ testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.Spec
         [Xunit.FactAttribute(DisplayName="Elf race characters get additional 20 damage resistance using data table")]
         [Xunit.TraitAttribute("FeatureTitle", "PlayerCharacter")]
         [Xunit.TraitAttribute("Description", "Elf race characters get additional 20 damage resistance using data table")]
+        [Xunit.TraitAttribute("Category", "elf")]
         public virtual void ElfRaceCharactersGetAdditional20DamageResistanceUsingDataTable()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elf race characters get additional 20 damage resistance using data table", ((string[])(null)));
-#line 30
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elf race characters get additional 20 damage resistance using data table", new string[] {
+                        "elf"});
+#line 32
 this.ScenarioSetup(scenarioInfo);
 #line 7
  this.FeatureBackground();
@@ -161,11 +165,11 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "Resistance",
                         "10"});
-#line 31
+#line 33
 testRunner.And("I have the following attributes", ((string)(null)), table1, "And ");
-#line 35
+#line 37
 testRunner.When("I take 30 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 38
 testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -177,17 +181,17 @@ testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.Spec
         public virtual void HealersRestoreAllHealth()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Healers restore all health", ((string[])(null)));
-#line 38
+#line 40
 this.ScenarioSetup(scenarioInfo);
 #line 7
  this.FeatureBackground();
-#line 39
-testRunner.Given("My character class is set to healer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 40
-testRunner.When("I take 30 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 41
-testRunner.And("Cast a healing spell", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("My character class is set to healer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 42
+testRunner.When("I take 30 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
+testRunner.And("Cast a healing spell", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
 testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -199,7 +203,7 @@ testRunner.Then("My health should now be 100", ((string)(null)), ((TechTalk.Spec
         public virtual void TotalMagicalPower()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Total magical power", ((string[])(null)));
-#line 44
+#line 46
 this.ScenarioSetup(scenarioInfo);
 #line 7
  this.FeatureBackground();
@@ -220,9 +224,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Ring",
                         "100",
                         "400"});
-#line 45
+#line 47
 testRunner.Given("I have the following magical items", ((string)(null)), table2, "Given ");
-#line 50
+#line 52
 testRunner.Then("My total magical power should be 700", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -234,17 +238,17 @@ testRunner.Then("My total magical power should be 700", ((string)(null)), ((Tech
         public virtual void ReadingARestoreHealthScrollWhenOverTiredHadNoEffect()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reading a restore health scroll when over tired had no effect", ((string[])(null)));
-#line 52
+#line 54
 this.ScenarioSetup(scenarioInfo);
 #line 7
  this.FeatureBackground();
-#line 53
-testRunner.Given("I last slept 4 days ago", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 54
-testRunner.When("I take 40 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
-testRunner.And("I read a restore health scroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("I last slept 4 days ago", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 56
+testRunner.When("I take 40 damage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 57
+testRunner.And("I read a restore health scroll", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
 testRunner.Then("My health should now be 60", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -256,7 +260,7 @@ testRunner.Then("My health should now be 60", ((string)(null)), ((TechTalk.SpecF
         public virtual void WeaponsAreWorthMoney()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Weapons are worth money", ((string[])(null)));
-#line 58
+#line 60
 this.ScenarioSetup(scenarioInfo);
 #line 7
  this.FeatureBackground();
@@ -273,9 +277,9 @@ this.ScenarioSetup(scenarioInfo);
             table3.AddRow(new string[] {
                         "Knife",
                         "10"});
-#line 59
+#line 61
 testRunner.Given("I have the following weapons", ((string)(null)), table3, "Given ");
-#line 64
+#line 66
 testRunner.Then("My weapons should be worth 100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -284,20 +288,22 @@ testRunner.Then("My weapons should be worth 100", ((string)(null)), ((TechTalk.S
         [Xunit.FactAttribute(DisplayName="Elf race characters don\'t lose magical power")]
         [Xunit.TraitAttribute("FeatureTitle", "PlayerCharacter")]
         [Xunit.TraitAttribute("Description", "Elf race characters don\'t lose magical power")]
+        [Xunit.TraitAttribute("Category", "elf")]
         public virtual void ElfRaceCharactersDonTLoseMagicalPower()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elf race characters don\'t lose magical power", ((string[])(null)));
-#line 66
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Elf race characters don\'t lose magical power", new string[] {
+                        "elf"});
+#line 69
 this.ScenarioSetup(scenarioInfo);
 #line 7
  this.FeatureBackground();
-#line 67
-testRunner.Given("I\'m an Elf", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 68
-testRunner.And("I have an Amulet with a power of 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
-testRunner.When("I use a magical Amulet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
+testRunner.Given("I\'m an Elf", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 71
+testRunner.And("I have an Amulet with a power of 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+testRunner.When("I use a magical Amulet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 73
 testRunner.Then("The Amulet power should not be reduced", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
